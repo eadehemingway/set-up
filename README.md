@@ -4,7 +4,7 @@
 
 ### whats the problem?
 
-you will not have the right access rights to git repositories if you have not set up your SSH key. If you try and clone a private repo it will not allow you to do so.
+you will not have the right access rights to private git repositories if you have not set up your SSH key. If you try and clone a private repo it will not allow you to do so.
 
 ### Whats the solution ?
 
