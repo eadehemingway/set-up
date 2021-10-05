@@ -62,6 +62,8 @@ this will take you to the json version of your settings, copy and paste in this 
       "source.fixAll.eslint": true
     },
 ```
+Then add the Eslint Vscode extention, the one that looks like this:
+<img width="1281" alt="Screenshot 2021-10-05 at 16 04 10" src="https://user-images.githubusercontent.com/32163243/136038891-05372e16-d918-4d08-bc81-da284956c1d9.png">
 
 ### How to check its worked?
 
