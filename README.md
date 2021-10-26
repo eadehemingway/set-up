@@ -112,7 +112,7 @@ open up a repo, add a change and write `git commit` without a message. Git will 
 run this command in your terminal, it adds `code.editor = code -w` to your clobal git config file
 
 ```jsx
-git config --global code.editor = code -w
+git config --global core.editor "code -w"
 ```
 
 ### How to check its worked?
