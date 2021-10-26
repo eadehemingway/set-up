@@ -52,21 +52,46 @@ There are lots of tiny things that Eslint will complain about if it is not done 
 
 Set vscode up so that Eslint fixes on save, i.e. it fixes its own issues every time you press save. 
 
-Go to your Vscode settings, then click the icon in the top right corner that looks like this: <img width="51" alt="Screenshot 2021-09-30 at 16 56 07" src="https://user-images.githubusercontent.com/32163243/135479605-931f48e2-d742-455d-b2e7-bb5cac1b331e.png">
+- Firstly make sure you have eslint installed globally: `npm i eslint -g`
+- Then create a `.eslintrc.js` file with this in it (this is a very basic eslint file, see other readme for more complex projects)
+    ```
+    module.exports = {
+        "parserOptions": {
+            "ecmaVersion": 2017
+        },
+        "env": {
+            "es6": true
+        },
+        "rules": {
+            "indent": ["error", 4],
+            "semi": ["error", "always"],
+            "quotes": ["error", "double"]
+        }
+    };
+    ```
 
-this will take you to the json version of your settings, copy and paste in this block: 
+- Go to your Vscode settings  (`cmd` + `,`), then click the icon in the top right corner that looks like this: <img width="51" alt="Screenshot 2021-09-30 at 16 56 07" src="https://user-images.githubusercontent.com/32163243/135479605-931f48e2-d742-455d-b2e7-bb5cac1b331e.png"> This will take you to the json version of your settings, copy and paste in this block: 
 
-```jsx
-"editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.fixAll.eslint": true
+    ```js
+    // These are all my auto-save configs
+    "editor.formatOnSave": true,
+    // turn it off for JS and JSX, we will do this via eslint
+    "[javascript]": {
+      "editor.formatOnSave": false
     },
-```
-Then go to Vscode extentions and install the 'ESLint' extention.
+    "[javascriptreact]": {
+      "editor.formatOnSave": false
+    },
+    // tell the ESLint plugin to run on save
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+    ```
+- Finally go to Vscode extentions and install the 'ESLint' extention.
 
 ### How to check its worked?
 
-It depends what the Eslint is configured to dislike but in a Flourish project it will remove any trailing whitespace, so if you open a file in a Flourish repo and add a space at the end of a line and try to save it, it will remove the space on save.
+Remove a semicolon in a js file, press save and it should add it back for you. 
 
 ## 3. Add Console wrap to make console.log into a keyboard shortcut
 
