@@ -52,9 +52,9 @@ There are lots of tiny things that Eslint will complain about if it is not done 
 
 Set vscode up so that Eslint fixes on save, i.e. it fixes its own issues every time you press save. 
 
-- Firstly make sure you have eslint installed globally: `npm i eslint -g`
+- Firstly make sure you have eslint installed: `npm i eslint -D`
 - Then create a `.eslintrc.js` file with this in it (this is a very basic eslint file, see other readme for more complex projects)
-    ```
+    ```javascript
     module.exports = {
         "parserOptions": {
             "ecmaVersion": 2017
@@ -63,30 +63,34 @@ Set vscode up so that Eslint fixes on save, i.e. it fixes its own issues every t
             "es6": true
         },
         "rules": {
-            "indent": ["error", 4],
-            "semi": ["error", "always"],
-            "quotes": ["error", "double"]
+            "object-curly-spacing": [2, "always"],
+            "indent": ["warn", 4],
+            "semi": ["warn", "always"],
+            "quotes": ["warn", "double"]
         }
-    };
-    ```
+    }
+
 
 - Go to your Vscode settings  (`cmd` + `,`), then click the icon in the top right corner that looks like this: <img width="51" alt="Screenshot 2021-09-30 at 16 56 07" src="https://user-images.githubusercontent.com/32163243/135479605-931f48e2-d742-455d-b2e7-bb5cac1b331e.png"> This will take you to the json version of your settings, copy and paste in this block: 
 
-    ```js
-    // These are all my auto-save configs
-    "editor.formatOnSave": true,
-    // turn it off for JS and JSX, we will do this via eslint
-    "[javascript]": {
-      "editor.formatOnSave": false
-    },
-    "[javascriptreact]": {
-      "editor.formatOnSave": false
-    },
-    // tell the ESLint plugin to run on save
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    }
-    ```
+```js
+// to format on save: 
+   "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+// some extras I like: 
+  "eslint.alwaysShowStatus": true,
+  "trailing-spaces.trimOnSave": true,
+  "files.trimTrailingWhitespace": true
+  ```
 - Finally go to Vscode extentions and install the 'ESLint' extention.
 
 ### How to check its worked?
