@@ -1,5 +1,20 @@
 # Set up like a pro
 
+## 0. Get Homebrew
+### whats the problem?
+you will have dependency issues and everything is more complicated without homebrew. Homebrew allows you to download things easily in your terminal
+
+### Whats the solution ?
+install homebrew using this command in your terminal: 
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+```
+
+
+### How to check its worked?
+type brew into your terminal and if you see xxx then its worked
+
 ## 1. Adding a SSH key to github
 
 ### whats the problem?
